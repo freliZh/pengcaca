@@ -1,0 +1,31 @@
+{% extends '../main.html' %}
+
+{% block content %}
+
+    <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="list-group">
+				<div class="list-group-item">
+					<h4><a href="#">我想学习的教程们都在这~</a></h4>
+				</div>
+                {% if questions %}
+                    {% for question in questions %}
+				        <div class="list-group-item"><span class="badge">长教程{{ question['long_count'] }}</span><span class="badge">短教程{{ question['short_count'] }}</span>
+                            <h4 class="list-group-item-heading">
+                                 <a href="#">{{ question['question'] }}</a>
+                            </h4>
+                            <p class="list-group-item-text">
+                                <p> {{ question['description'] }}</p>
+                            </p>
+                        </div>
+                    {% end %}
+                {% end %}
+
+			</div>
+		</div>
+	</div>
+
+
+    <hr align="center" width="500" size="1" color="#FF00"/>
+
+{% end %}

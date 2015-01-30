@@ -1,0 +1,14 @@
+@charset "utf8";
+
+.view{
+	margin-top:30px;
+}
+.pcc-navbar { }
+
+.footer{
+    position:absolute;bottom:0;/*width:100%;*/height:60px;clear:both;
+border-color: #e7e7e7;
+color: #999;
+text-align: center;
+background-color: #f9f9f9;
+border-top: 1px solid #e5e5e5;}

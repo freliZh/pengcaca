@@ -1,0 +1,33 @@
+{% extends '../main.html' %}
+
+{% block content %}
+    lalal<input id="message"/>
+    <div id="chatContent"></div>
+    <button type="button" id="mypp">didi</button>
+
+{% end %}
+{% block extra_js %}
+<script type="text/javascript">
+
+    requestInventory();
+        $("#mypp").click(function(){
+            $.post("test/chat",{
+                content: $("#message").val()
+                },type="json");
+    });
+
+
+function requestInventory(){
+    var host ='ws://localhost:8888/home/test/status'
+    var websocket = new WebSocket(host);
+
+    websocket.onopen = function (evt) {};
+    websocket.onmessage = function (evt){
+        var content = $.parseJSON(evt.data)['content'];
+        var txt = "<p>"+ content +"</p>"
+        $("#chatContent").html(txt);
+    };
+    websocket.onerror = function (evt) {};
+}
+</script>
+{% end %}
