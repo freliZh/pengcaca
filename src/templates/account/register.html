@@ -1,0 +1,58 @@
+{% extends '../account.html' %}
+{% block account_content %}
+    <div class="ui very relaxed stackable page grid">
+        <div class="row">
+            <div class="ten wide column">
+                <h3 class="ui inverted header">怎么样才能结识你的男神/女神</h3>
+
+                <p>去帮他/她拿快递吧~</p>
+
+                <p>彭擦擦是一个互助拿快递的网站~</p>
+
+                <div class="ui basic inverted animated button button">
+                    <div class="visible content">去主页看看</div>
+                    <div class="hidden content"><i class="right arrow icon"></i></div>
+                </div>
+
+            </div>
+
+            <div class="six wide column">
+                <form class="ui form segment" action="register" method="post">
+                    <p>彭擦擦注册/<a href="login">登录</a></p>
+                    <div class="field">
+                        <label>用户名</label>
+                        <input placeholder="用户名" name="username" type="text">
+                    </div>
+                    <div class="field">
+                        <label>密码</label>
+                        <input placeholder="密码" type="password" name="password">
+                    </div>
+                    <div class="field">
+                        <label>请确认密码</label>
+                        <input placeholder="确认密码" type="password" name="password_confirm">
+                    </div>
+                    <div class="field">
+                        <label>电话号码</label>
+                        <input placeholder="电话号码" type="text" name="phone_number">
+                    </div>
+                    <div class="field">
+                        <label>常用地址</label>
+                        <input placeholder="常用地址" type="text" name="address">
+                    </div>
+                    <div class="inline field">
+                        <div class="ui toggle checkbox">
+                          <input type="checkbox" name="terms">
+                          <label>我同意彭擦擦协议</label>
+                        </div>
+                    </div>
+                    <input type="button" value="提交" class="ui blue submit button">
+                </form>
+            </div>
+        </div>
+    </div>
+<style type="text/css">
+#home .vertical.segment {
+  padding: 8rem 0rem;
+}
+</style>
+{% end %}

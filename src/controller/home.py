@@ -15,10 +15,8 @@ class HomeHandler(base.BaseHandler):
 
     @tornado.web.authenticated
     def get(self, *args, **kwargs):
-        logging.getLogger("site").info("home page")
-        user_id = self.get_secure_cookie("pengchacha-user")
-        logging.getLogger("site").info(user_id)
-        return self.render("home/index.html")
+        needs = self.db.query("select * from needs where status=0 order by publish_time desc")
+        return self.render("home/index.html",needs=needs)
 
 class myPageHandler(base.BaseHandler):
 
@@ -26,7 +24,7 @@ class myPageHandler(base.BaseHandler):
     def get(self):
         user_id = self.get_secure_cookie("pengchacha-user")
 
-        questions = self.db.query("SELECT * FROM question where user_id = %s ORDER BY time DESC ",int(user_id))
-        answers = self.db.query("SELECT * FROM answers where user_id = %s ORDER BY time DESC ",int(user_id))
+        questions = self.db.query("SELECT * FROM needs where user_id = %s ORDER BY time DESC ",int(user_id))
+        answers = self.db.query("SELECT * FROM helps where user_id = %s ORDER BY time DESC ",int(user_id))
 
-        self.render("home/myPage.html", questions=questions,answers = answers)
+        self.render("home/myPage.html", questions=questions,answers=answers)

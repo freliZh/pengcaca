@@ -1,123 +1,38 @@
 {% extends '../main.html' %}
 
 {% block content %}
-	<div class="jumbotron">
-		<h1>
-			get新技能啦
-		</h1>
-		<p>
-			欢迎上传图文教程
-		</p>
-		<p>
-			<a class="btn btn-primary btn-large" href="#">Learn more</a>
-		</p>
+
+	<h3>需要拿的快递们~</h3>
+    <div class="row clearfix">
+		<div class="col-md-9 column">
+			<div class="list-group">
+                {% if needs %}
+                    {% for need in needs %}
+				        <div class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                 <a href="#">{{ need['need_title'] }}</a>
+                            </h4>
+                            <p class="list-group-item-text">
+                                <p> {{ need['need_content'] }}</p>
+                            </p>
+                        </div>
+                    {% end %}
+                {% end %}
+
+			</div>
+		</div>
+        <div class="col-md-3 column">
+            <ul class="side-ul">
+
+                <li><a href="#section-5" class="side-li">所有需要拿的快递</a></li>
+                <li><a href="#section-1" class="side-li">我帮人拿过的快递</a></li>
+                <li><a href="#section-2" class="side-li">别人帮我拿过的快递</a></li>
+                <li><a href="#section-3" class="side-li">我正在拿的快递</a></li>
+                <li><a href="#section-4" class="side-li">邀请我拿的快递</a></li>
+
+            </ul>
+		</div>
 	</div>
 
-	<h3>从零单排精彩推荐<a class = "all" href = "#">查看全部></a></h3>
-
-			<div class="row">
-
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/people">
-						<div class="caption">
-							<h3>
-								damn 程序猿
-							</h3>
-							<p>
-								程序猿的技能们
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/city">
-						<div class="caption">
-							<h3>
-								damn 大学考试
-							</h3>
-							<p>
-								欢迎上传考试教程
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/sports">
-						<div class="caption">
-							<h3>
-								电子电气
-							</h3>
-							<p>
-								啦啦啦
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<h3>高级课程精彩推荐<a class = "all" href = "#">查看全部></a></h3>
-			<div class="row">
-
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/people">
-						<div class="caption">
-							<h3>
-								微观经济学
-							</h3>
-							<p>
-								微观经济学原理
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/city">
-						<div class="caption">
-							<h3>
-								遗传和演化导论
-							</h3>
-							<p>
-								本课程是对演化和遗传学的快速入门引导
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-						<img alt="300x200" src="http://lorempixel.com/600/200/sports">
-						<div class="caption">
-							<h3>
-								虚构关系
-							</h3>
-							<p>
-								文艺作品怎样帮助我们更加透彻地看待这些关系？
-							</p>
-							<p>
-								<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
 
 {% end %}

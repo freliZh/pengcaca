@@ -33,12 +33,13 @@ class Application(tornado.web.Application):
             (r"/question/ask", controller.question.AskHandler),
             (r"/question/show/([\d]+)", controller.question.ShowHandler),
             (r"/home/myPage",controller.home.myPageHandler),
+
             (r"/home/test",controller.test.MainHandler),
             (r"/home/test/chat",controller.test.ChatHandler),
             (r"/home/test/status",controller.test.StatusHandler)
         ]
         settings = dict(
-            site_title=u"PengChaCha",
+            site_title=u"PengCaCa",
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
             xsrf_cookie=True,

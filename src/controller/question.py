@@ -21,7 +21,7 @@ class AskHandler(base.BaseHandler):
         try:
             quest = self.db.execute("insert into question (user_id,question,description,time) values (%s,%s,%s,%s)",user_id,quest_title,quest_content,self.get_current_time())
         except Exception, e:
-            print "insert erro!"
+            print "insert question table error!"
             logging.getLogger("site").error(e)
 
         #获取问题id
