@@ -5,9 +5,10 @@
             <div class="ten wide column">
                 <h3 class="ui inverted header">怎么样才能结识你的男神/女神</h3>
 
-                <p>去帮他/她拿快递吧~</p>
+                    <p style="color:#fff">去帮他/她拿快递吧~</p>
 
-                <p>彭擦擦是一个互助拿快递的网站~</p>
+                    <p style="color:#fff">彭擦擦是一个互助拿快递的网站~</p>
+
 
                 <div class="ui basic inverted animated button button">
                     <div class="visible content">去主页看看</div>
@@ -17,7 +18,7 @@
             </div>
 
             <div class="six wide column">
-                <form action="login" method="post" class="ui form segment">
+                <div  class="ui form segment">
                     <p>彭擦擦登录/<a href="register">注册</a></p>
                     <div class="field">
                         <label>用户名</label>
@@ -27,9 +28,11 @@
                         <label>密码</label>
                         <input placeholder="密码" type="password" name="password">
                     </div>
-
-                    <input class="ui blue submit button" type="submit" value="提交">
-                </form>
+                    <div id="z_warning" class="ui hidden red message" >
+                        <p>用户名/密码错误</p>
+                    </div>
+                    <button class="ui blue submit button" type="submit"> 提交</button>
+                </div>
             </div>
         </div>
     </div>

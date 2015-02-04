@@ -5,6 +5,7 @@ __author__ = 'livvy'
 import tornado.web
 import base
 import logging
+import json
 
 __all__ = ['LoginHandler', "RegisterHandler", 'LogoutHandler']
 
@@ -14,7 +15,14 @@ class LoginHandler(base.BaseHandler):
     def get(self, *args, **kwargs):
         return self.render("account/login.html")
 
-    @tornado.web.asynchronous
+    def return_json(self, data_dict):
+        """
+        acessory method to return json objects
+        """
+        self.set_header('Content-Type', 'application/json')
+        json_ = tornado.escape.json_encode(data_dict)
+        self.write(json_)
+        self.finish()
     def post(self, *args, **kwargs):
         username = self.get_argument("username", None)
         password = self.get_argument("password", None)
@@ -23,11 +31,14 @@ class LoginHandler(base.BaseHandler):
         user = self.db.get("""select * from user where name = %s and
             password = %s and status = 1""", username, password)
         if not user:
-            self.redirect("/")
-            return
+            #self.finish("ddd")
+            self.write("F")
+            self.finish()
+
+
         user_id = user["id"]
-        self.set_secure_cookie("pengchacha-user", str(user_id))
-        self.redirect(self.get_argument("next", "/"))
+        #self.redirect(self.get_argument('next', '/'))
+        self.write("T")
         self.finish()
 
 

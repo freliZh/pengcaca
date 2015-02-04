@@ -5,6 +5,9 @@
 html {
   font-size: 14px;
 }
+#home{
+background-image: url(../../Semantic/bg.jpg);
+}
 
 
 /*******************************
@@ -129,4 +132,5 @@ html {
   #home .selection.list .right.floated {
     display: none;
   }
+
 }
